@@ -1,21 +1,19 @@
 package Models;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
-@Table
+@Table(name= "tipo_usuario")
 public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column
-    private String EPS;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, unique = true)
+    @NotNull(message = "El campo no puede estar en blanco.")
+    private TipoUsuario tipoUsuario;
 
-    @Column
-    private String POLIZA;
-
-    @Column
-    private String PARTICULAR;
 
     public long getId() {
         return id;
@@ -25,27 +23,11 @@ public class TipoUsuario {
         this.id = id;
     }
 
-    public String getEPS() {
-        return EPS;
+    public TipoUsuario getTipoUsuario() {
+        return tipoUsuario;
     }
 
-    public void setEPS(String EPS) {
-        this.EPS = EPS;
-    }
-
-    public String getPOLIZA() {
-        return POLIZA;
-    }
-
-    public void setPOLIZA(String POLIZA) {
-        this.POLIZA = POLIZA;
-    }
-
-    public String getPARTICULAR() {
-        return PARTICULAR;
-    }
-
-    public void setPARTICULAR(String PARTICULAR) {
-        this.PARTICULAR = PARTICULAR;
+    public void setTipoUsuario(TipoUsuario tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }
