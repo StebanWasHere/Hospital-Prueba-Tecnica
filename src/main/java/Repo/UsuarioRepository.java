@@ -1,9 +1,9 @@
 package Repo;
 
-import Models.IdentificacionUsuario;
+import Models.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface IdentificacionUsuarioRepository extends JpaRepository<IdentificacionUsuario, Long> {
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 }

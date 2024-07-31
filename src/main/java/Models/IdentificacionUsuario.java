@@ -13,8 +13,8 @@ public class IdentificacionUsuario {
     private Long id;
 
     @Column(length = 10, nullable = false, unique = true)
-    @NotBlank(message = "El campo identificacion no puede estar en blanco")
-    @Size(max = 10, message = "La identificación no puede tener más de 10 caracteres")
+    @NotBlank(message = "Este campo no puede estar en blanco.")
+    @Size(max = 10, message = "No puede tener más de 10 caracteres.")
     private String identificacion;
 
     // Getters y Setters
