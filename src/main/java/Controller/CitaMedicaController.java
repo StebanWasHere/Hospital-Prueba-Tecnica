@@ -21,9 +21,11 @@ public class CitaMedicaController {
             CitaMedica citaAgendada = citaMedicaService.agendarCita(nuevaCita);
             return ResponseEntity.status(HttpStatus.CREATED).body(citaAgendada);
         } catch (ResponseStatusException e) {
-            return ResponseEntity.status(e.getStatusCode().value()).body(e.getReason());
+            return ResponseEntity.status(e.getStatusCode()).body(e.getReason());
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error, intente nuevamente.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error interno del servidor");
         }
     }
+
 }
+
