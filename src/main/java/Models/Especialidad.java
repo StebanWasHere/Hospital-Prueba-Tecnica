@@ -14,7 +14,7 @@ public class Especialidad {
     private long id;
 
     @Column(length = 10, nullable = false) //verifica que el numero maximo sea 10 y no se pueda poner un campo en blanco
-    @NotBlank(message = "No puede estar en blanco.")
+    @NotBlank(message = "Este campo no puede estar en blanco.")
     @Size(max = 10, message = "El tipo de cita no puede contener mas de 10 caracteres.")
     private String tipoCita;
 
