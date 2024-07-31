@@ -21,7 +21,7 @@ public class CitaMedicaService {
         String identificacion = citaMedica.getUsuario().getIdentificacionUsuario().getIdentificacion();
         TipoUsuarioEnum tipoUsuario = citaMedica.getUsuario().getTipoUsuario();
 
-        // Verifica cita
+        // Verifica la cita
         if (tipoUsuario == TipoUsuarioEnum.PARTICULAR) {
             Optional<CitaMedica> existingCita = citaMedicaRepository.findByUsuarioIdentificacionUsuarioIdentificacion(identificacion);
             if (existingCita.isPresent()) {
@@ -51,7 +51,7 @@ public class CitaMedicaService {
 
         return citaMedicaRepository.save(citaMedica);
     }
-
+// fecha con dias habiles
     private LocalDate calcularFechaConDiasHabiles(LocalDate fechaInicial, int diasHabiles) {
         LocalDate fecha = fechaInicial;
         int diasAgregados = 0;

@@ -21,10 +21,8 @@ public class CitaMedicaController {
             CitaMedica citaAgendada = citaMedicaService.agendarCita(nuevaCita);
             return ResponseEntity.status(HttpStatus.CREATED).body(citaAgendada);
         } catch (ResponseStatusException e) {
-            // Aquí usamos getRawStatusCode() y getReason() de ResponseStatusException
             return ResponseEntity.status(e.getStatusCode().value()).body(e.getReason());
         } catch (Exception e) {
-            // Manejo general de excepciones
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error, intente nuevamente.");
         }
     }
